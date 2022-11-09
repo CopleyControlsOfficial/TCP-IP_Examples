@@ -1,0 +1,52 @@
+<html>
+<head>
+   <title>Encoder positions</title>
+</head>
+
+<style type="text/css">
+   .posTable { border:1px solid black; border-collapse:collapse; }
+   .posTable th { padding:5px; border: 1px solid; }
+   .posTable td { padding:5px; border: 1px solid; text-align: center; }
+   input { width:75px; }
+</style>
+
+<body>
+
+<a href="/"> Previous page </a>
+<hr>
+
+<h1>Encoder positions</h1>
+
+<table class="posTable" id="posTbl" >
+   <tr>
+      <th> Axis </th>
+      <th> Position </th>
+      <th> Destination </th>
+   </tr>
+   <tr>
+      <td> Axis 1</td>
+      <td id="pos0"> 0 </td>
+      <td > <input id="dest0" value="0"></td>
+   </tr>
+</table>
+<br>
+<label for="vel">Speed (cts/sec)</label>
+<input id="vel" value="10000"><br>
+<label for="acc">Accel (cts/sec<sup>2</sup>)</label>
+<input id="acc" value="10000"><br>
+<br>
+<button type="button" onclick="Move()">Move</button>
+<button type="button" onclick="Abort()">Abort</button>
+<br>
+
+<script src="jquery.js"></script>
+<script src="sprintf.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<script src="position.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+   $(document).ready( PositionSetup() );
+</script>
+</body>
+
+</html>

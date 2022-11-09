@@ -1,0 +1,44 @@
+<html>
+<head>
+   <title>Send raw commands</title>
+</head>
+
+<body>
+
+<a href="/"> Previous page </a>
+<hr>
+
+<h1>Send raw binary commands</h1>
+
+This page can be used to send binary serial commands to the drive.<p>
+The details of the binary serial command format can be found in the binary serial command applications note on Copley's web site.
+Every command has an 8-bit op-code and takes zero or more 16-bit words of data.<p>
+In the table below, enter the opcode and data (comma seperated) to send to the drive and the drive's response will be 
+displayed.<p>
+For example, to get parameter 0 (current loop KP), enter 12 in the opcode field (the code for 'get') and 0 in the data field.<p>
+To set the current loop kp to 123, enter 13 in the opcode field and 0,123 in the data field.<p>
+
+<table>
+   <tr>
+      <td>Opcode:</td>
+      <td> <input type="text" id="op"> </td>
+   </tr>
+   <tr>
+      <td>Data</td>
+      <td> <input type="text" id="data"> </td>
+   </tr>
+   <tr>
+      <td>Response</td>
+      <td id="rsp"> </td>
+   </tr>
+</table>
+
+<br>
+<button onclick="SendCmd()"> Send Command</button>
+
+<script src="jquery.js"></script>
+<script src="rawcmd.js"></script>
+
+</body>
+
+</html>

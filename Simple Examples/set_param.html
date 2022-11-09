@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <style>
+      table { border-collapse: collapse; }
+      table, td, th { border: 1px solid black; }
+      .pid { width: 50px; }
+      .val { width: 400px; }
+   </style>
+
+   <title>Get / Set Parameters </title>
+</head>
+
+<body>
+
+<a href="/"> Previous page </a>
+<hr>
+
+<h1>Get / Set Parameters</h1>
+
+This page allows you to read and write drive parameters.<p>
+Enter one or more parameter ID values in the first column and press the 'Get parameter' button to read the current value of the parameters.<p>
+Update the value in the second column and press the 'Set parameter' button to update the parameter values.<p>
+The parameter dictionary (available on Copley's web site) lists the meaning of the various drive parameters.<p>
+
+<table class="posTable" id="posTbl">
+   <tr>
+      <th>Param</th>
+      <th>Value</th>
+   </tr>
+   <tr><td><input type="text" id="pid0" class="pid"></input></td><td><input type="text" id="val0" class="val"></input></td></tr>
+   <tr><td><input type="text" id="pid1" class="pid"></input></td><td><input type="text" id="val1" class="val"></input></td></tr>
+   <tr><td><input type="text" id="pid2" class="pid"></input></td><td><input type="text" id="val2" class="val"></input></td></tr>
+   <tr><td><input type="text" id="pid3" class="pid"></input></td><td><input type="text" id="val3" class="val"></input></td></tr>
+   <tr><td><input type="text" id="pid4" class="pid"></input></td><td><input type="text" id="val4" class="val"></input></td></tr>
+</table>
+<br>
+
+<button onclick="GetParam()"> Get Parameter </button>
+<button onclick="SetParam()"> Set Parameter </button>
+
+<script src="jquery.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<script src="setparam.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+   <title>Move</title>
+</head>
+
+<body>
+
+<h1>Make a move</h1>
+
+<table>
+   <tr>
+      <td>Position:</td>
+      <td> <input type="text" id="pos"> </td>
+   </tr>
+   <tr>
+      <td>Max Vel:</td>
+      <td> <input type="text" id="vel"> </td>
+   </tr>
+   <tr>
+      <td>Max Accel:</td>
+      <td> <input type="text" id="acc"> </td>
+   </tr>
+   <tr>
+      <td>Current Pos:</td>
+      <td id="actpos"> 0 </td>
+   </tr>
+</table>
+
+<script src="jquery.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<script src="setparam.js"></script>
+
+<button onclick="Move()"> Start </button>
+<script language="JavaScript" type="text/javascript">
+   $(document).ready( MoveSetup() );
+</script>
+
+</body>
+
+</html>

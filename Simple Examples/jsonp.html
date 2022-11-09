@@ -1,0 +1,37 @@
+
+<html>
+<head>
+   <title>JSONP test</title>
+</head>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<button onclick="test1()"> test1 </button>
+<button onclick="test2()"> test2 </button>
+
+<script language="JavaScript" type="text/javascript">
+   function test1()
+   {
+      console.log( "test1" );
+      $.getJSON( "http://10.10.2.25/_cmd", {type: "set", id: 0xc8, value: 0}, function(dat){ console.log(dat); } );
+   }
+
+   function test2()
+   {
+      $.ajax( { url: "http://10.10.2.25/_cmd", 
+                dataType: "jsonp", // jsonp
+                data: {type: "get", id: 0x17},
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                success: function (result, status, xhr) { console.log( "success"); console.log(result); },
+                error: function (xhr, status, error) { console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText) }
+             });
+
+   }
+</script>
+
+</body>
+
+</html>
